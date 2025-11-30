@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <title>Orda</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <h1>SOY UN GENIO DE LA INFORMÁTICA</h1>
+
+    <table id="enemigosTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>País</th>
+            <th>Afiliación</th>
+        </tr>
+        </thead>
+        <tbody id="enemigosBody"></tbody>
+    </table>
+
+    <div class="formulario-container">
+        <h2>Agregar Enemigo</h2>
+        <form id="enemigoForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" required>
+            </div>
+            <div class="form-group">
+                <label for="afiliacion">Afiliación:</label>
+                <input type="text" id="afiliacion" name="afiliacion" required>
+            </div>
+            <button type="submit">Guardar</button>
+            <button type="button" onclick="limpiarFormulario()">Cancelar</button>
+        </form>
+        <div id="mensaje" class="mensaje"></div>
+    </div>
+
+    <div class="formulario-container">
+        <h2>Editar Enemigo</h2>
+        <form id="editarForm">
+            <div class="form-group">
+                <label for="editarId">ID del enemigo:</label>
+                <input type="number" id="editarId" name="editarId" required min="1">
+            </div>
+            <div class="form-group">
+                <label for="editarNombre">Nombre:</label>
+                <input type="text" id="editarNombre" name="editarNombre" required>
+            </div>
+            <div class="form-group">
+                <label for="editarPais">País:</label>
+                <input type="text" id="editarPais" name="editarPais" required>
+            </div>
+            <div class="form-group">
+                <label for="editarAfiliacion">Afiliación:</label>
+                <input type="text" id="editarAfiliacion" name="editarAfiliacion" required>
+            </div>
+            <button type="submit">Actualizar</button>
+            <button type="button" onclick="limpiarFormularioEditar()">Cancelar</button>
+        </form>
+        <div id="mensajeEditar" class="mensaje"></div>
+    </div>
+
+    <div class="formulario-container">
+        <h2>Eliminar Enemigo por ID</h2>
+        <form id="eliminarForm">
+            <div class="form-group">
+                <label for="eliminarId">ID del enemigo:</label>
+                <input type="number" id="eliminarId" name="eliminarId" required min="1">
+            </div>
+            <button type="submit">Eliminar</button>
+        </form>
+        <div id="mensajeEliminar" class="mensaje"></div>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+</html>
