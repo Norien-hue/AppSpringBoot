@@ -20,13 +20,13 @@ public class EnemigoService {
         }else {
             System.out.println("Jefe esto va como una máquina");
             enemigos.forEach(enemigo -> {
-                System.out.println("ID"+enemigo.getId());
+                System.out.println("ID: " + enemigo.getId() + " - Nombre: " + enemigo.getNombre());
             });
         }
         return enemigos;
     }
 
-    public Optional<Enemigo> obtenerPorId(Long id) {
+    public Optional<Enemigo> obtenerPorId(String id) {
         return enemigoRepository.findById(id);
     }
 
@@ -34,11 +34,11 @@ public class EnemigoService {
         return enemigoRepository.save(enemigo);
     }
 
-    public void eliminar(Long id) {
+    public void eliminar(String id) {
         enemigoRepository.deleteById(id);
     }
 
-    public Enemigo actualizar(Long id, Enemigo enemigoActualizado) {
+    public Enemigo actualizar(String id, Enemigo enemigoActualizado) {
         return enemigoRepository.findById(id)
                 .map(enemigo -> {
                     if (enemigoActualizado.getNombre() != null) {

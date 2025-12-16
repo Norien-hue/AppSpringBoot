@@ -20,7 +20,7 @@ public class EnemigoController {
     }
 
     @GetMapping("/enemigo/{id}")
-    public ResponseEntity<Enemigo> obtenerEnemigoPorId(@PathVariable Long id) {
+    public ResponseEntity<Enemigo> obtenerEnemigoPorId(@PathVariable String id) {
         return enemigoService.obtenerPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -32,12 +32,12 @@ public class EnemigoController {
     }
 
     @DeleteMapping("/enemigo/{id}")
-    public void eliminarEnemigo(@PathVariable Long id) {
+    public void eliminarEnemigo(@PathVariable String id) {
         enemigoService.eliminar(id);
     }
 
     @PatchMapping("/enemigo/{id}")
-    public Enemigo actualizarEnemigo(@PathVariable Long id, @RequestBody Enemigo enemigoActualizado) {
+    public Enemigo actualizarEnemigo(@PathVariable String id, @RequestBody Enemigo enemigoActualizado) {
         return enemigoService.actualizar(id, enemigoActualizado);
     }
 }
