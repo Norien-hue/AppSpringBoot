@@ -10,8 +10,4 @@ import java.util.List;
 public interface EnemigoRepository extends MongoRepository<Enemigo, String> {
 
     List<Enemigo> findByNombre(String nombre);
-    
-    List<Enemigo> findByPais(String pais);
-    
-    List<Enemigo> findByAfiliacion(String afiliacion);
 }
